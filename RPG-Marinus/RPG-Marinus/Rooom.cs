@@ -67,18 +67,12 @@ public class Menu
                 case (0):
                     menu = false;
                     method1.Invoke(null, null);
-                    // hier wil ik een command doen die je als input kan gebruik voor de functie
-                    //Invoke("function1", 0.1f);
                     break;
                 case (1):
                     method2.Invoke(null, null);
-                    // hier wil ik een command doen die je als input kan gebruik voor de functie
-                    //Invoke("function2", 0.1f);
                     break;
                 case (2):
                     method3.Invoke(null, null);
-                    // hier wil ik een command doen die je als input kan gebruik voor de functie
-                    //Invoke("function3", 0.1f);
                     break;
      }
             }
