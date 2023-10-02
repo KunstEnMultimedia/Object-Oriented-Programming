@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht92();
+            Opdracht93();
             Console.ReadLine();
         }
           
@@ -56,5 +56,14 @@
             deelnemer1.Praat();
             deelnemer2.Praat();
         }
+
+        public static void Opdracht93()
+        {
+            SithLord Vader = new SithLord();
+            Vader.Energie = 20; 
+            Console.WriteLine($"Vaders energie is {Vader.Energie}");
+        }
+
+        
     }
 }

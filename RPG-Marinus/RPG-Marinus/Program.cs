@@ -6,19 +6,13 @@ namespace RPG_Marinus
     {
         static void Main(string[] args)
         {
-            Menu main = new Menu();
-
-            Console.WriteLine("Start");
-            Console.WriteLine("Options");
-            Console.WriteLine("Quit");
-            Console.WriteLine();
-            Console.SetCursorPosition(0, 0);
+            Menu Menu = new Menu();
+            //de Selector functie maakt een menu die je kan navigeren met de arrow keys en enter
+            Menu.Selector("Start", "Options", "Quit", 0);
+            Menu.Selector("Samurai", "Gunslinger", "Wizard", 3);
 
 
-            //while (main.menu == true)
-            main.Selector("Start", "Options", "Quit");
-            
-            Console.ReadLine();
+            Console.ReadLine(); 
         }
     }
 }
