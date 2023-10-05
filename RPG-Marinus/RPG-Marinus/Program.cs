@@ -9,7 +9,7 @@ namespace RPG_Marinus
             Menu Menu = new Menu();
             //de Selector functie maakt een menu die je kan navigeren met de arrow keys en enter
             Menu.Selector("Start", "Options", "Quit", 0);
-            Menu.Selector("Samurai", "Gunslinger", "Wizard", 3);
+            Menu.Selector("Samurai", "Gunslinger", "Wizard", 2);
 
 
             Console.ReadLine(); 

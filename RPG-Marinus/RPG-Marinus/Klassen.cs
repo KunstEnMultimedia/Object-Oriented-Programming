@@ -2,8 +2,8 @@
 
 public class Klassen
 {
-	public Class()
-	{
-
-	}
+    int HP;
+    int damage;
+    int armor;
+    string skill;
 }
