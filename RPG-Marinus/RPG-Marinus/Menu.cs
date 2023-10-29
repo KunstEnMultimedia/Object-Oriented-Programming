@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection; // nodig voor een string paramater naar een function call omzetten
+using System.Reflection; // nodig om een string te gebruiken om vervolgen een functie mee aan te roepen
 
 
 public class Menu
@@ -21,6 +21,7 @@ public class Menu
         // hier komt nu een selectie scherm
     }
 
+
     public static void Options()
     {
         Console.WriteLine("Sorry nog geen options");
@@ -30,16 +31,18 @@ public class Menu
     {
         Environment.Exit(0);
     }
+    public static void Samurai() { Class currentClass = new Class(120, 10, 20, 25, 3); }
+    public static void Gunslinger() { Class currentClass = new Class(100, 15, 15, 50, 2); }
+    public static void Wizard() { Class currentClass = new Class(80, 20, 10, 20, 4); }
 
     public void Selector(string function1, string function2 ,string function3, int cursorStart)
     {
-
         Console.WriteLine(function1);
         Console.WriteLine(function2);
         Console.WriteLine(function3);
         Console.WriteLine();
         menu = true;
-        Console.SetCursorPosition(0, cursorStart); //  deze zet de cursor op de y van de cursorStart
+        Console.SetCursorPosition(0, cursorStart); // deze zet de cursor op de Y as
 
         int selected = Console.GetCursorPosition().Top; // pakt de curser position
         int startPos = selected; //pakt de startpositie van de cursor
@@ -57,7 +60,7 @@ public class Menu
         {
             Console.SetCursorPosition(0, Console.CursorTop + 1);
         }
-        // deze twee if's zorgen voor dat je niet de console crashed door uit de scherm borders gaan
+        // deze twee if's zorgen voor dat je niet het programma kan stoppen door uit de border te gaan
         if (read == ConsoleKey.UpArrow && Console.CursorTop != Console.WindowTop)
         {
             Console.SetCursorPosition(0, Console.CursorTop - 1);
@@ -66,14 +69,15 @@ public class Menu
 
         selected = Console.GetCursorPosition().Top;
         int trueSelected = selected - startPos; 
-        //true selected is een aangepaste selected die zorgt dat het tellen van boven naarbeneden altijd
+        //true selected is een aangepaste versie van selected die ervoor
+        //zorgt dat het tellen van boven naarbeneden altijd
         //bij 0 start los van waar de curser nu is
 
             if (trueSelected >= 3) 
             {
                 Console.SetCursorPosition(0, Console.CursorTop - 1);
             }
-            // deze twee if statements zorgen ervoor dat je niet uit de slectie box kan
+            // deze twee if statements zorgen ervoor dat je niet uit de selectie box kan
 
             else if (trueSelected <= -1)
             { 
@@ -98,6 +102,8 @@ public class Menu
                       break;
               }
             }
-         }
+          }
        }
-    }
+
+
+ }

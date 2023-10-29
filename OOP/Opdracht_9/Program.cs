@@ -8,7 +8,6 @@
             Console.ReadLine();
         }
 
-
         static void Opdracht91()
         {
             int aantalBalletjes = 1000;
@@ -60,10 +59,16 @@
         public static void Opdracht93()
         {
             SithLord Vader = new SithLord();
-            Vader.Energie = 20;
+            Vader.ResetLord(20);
+            Vader.SetName("DarthVader");
+
             Console.WriteLine($"Vaders energie is {Vader.Energie}");
+
+            Vader.ResetLord(-20);
+
+            Console.WriteLine($"Vaders energie is {Vader.Energie}");
+            Console.WriteLine(Vader.SithMail);
+            // Console.WriteLine(Vader.sithName); sithName is private, dit kan niet
         }
-
-
     }
 }
