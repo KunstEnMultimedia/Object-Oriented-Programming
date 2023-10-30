@@ -61,6 +61,7 @@
             SithLord Vader = new SithLord();
             Vader.ResetLord(20);
             Vader.SetName("DarthVader");
+            Vader.GeboorteJaar = 2000;
 
             Console.WriteLine($"Vaders energie is {Vader.Energie}");
 
@@ -68,6 +69,7 @@
 
             Console.WriteLine($"Vaders energie is {Vader.Energie}");
             Console.WriteLine(Vader.SithMail);
+            Console.WriteLine($"{Vader.sithName} zijn geboortejaar is {Vader.GeboorteJaar} ");
             // Console.WriteLine(Vader.sithName); sithName is private, dit kan niet
         }
     }

@@ -1,8 +1,10 @@
 ﻿class SithLord
 {
     private int energie;
-    private string sithName { get; set; }
-    
+    public string sithName { get; private set; }
+
+    public int GeboorteJaar { get; set; }
+
     public void SetName(string name)
     {
         sithName = name;
