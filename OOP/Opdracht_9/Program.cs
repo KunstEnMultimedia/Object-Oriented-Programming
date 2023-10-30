@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht93();
+            Opdracht94();
             Console.ReadLine();
         }
 
@@ -71,6 +71,27 @@
             Console.WriteLine(Vader.SithMail);
             Console.WriteLine($"{Vader.sithName} zijn geboortejaar is {Vader.GeboorteJaar} ");
             // Console.WriteLine(Vader.sithName); sithName is private, dit kan niet
+        }
+
+        public static void Opdracht94()
+        {
+            Random ran = new Random();
+            string datumInvoer = Console.ReadLine();
+            DateTime datumVerwerkt = DateTime.Parse(datumInvoer);
+            Console.WriteLine(datumVerwerkt);
+            Console.WriteLine(datumVerwerkt.AddDays(ran.Next(0,100)));
+            Console.WriteLine(datumVerwerkt.DayOfWeek);
+
+            if (DateTime.IsLeapYear(datumVerwerkt.Year))
+            { 
+              Console.WriteLine(datumVerwerkt+ " is een shikkeljaar");
+            }
+            else 
+            {
+              Console.WriteLine(datumVerwerkt+ " is geen een shikkeljaar");
+
+            }
+
         }
     }
 }
