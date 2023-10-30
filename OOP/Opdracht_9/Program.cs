@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht94();
+            Opdracht96_B();
             Console.ReadLine();
         }
 
@@ -92,6 +92,18 @@
 
             }
 
+        }
+
+        public static void Opdracht96_A()
+        {
+            RapportModule mijnpunten = new RapportModule();
+            mijnpunten.Percentage = 65;
+            mijnpunten.PrintGraad();
+        }
+
+        public static void Opdracht96_B()
+        { 
+        
         }
     }
 }
