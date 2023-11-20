@@ -1,10 +1,12 @@
-﻿namespace OOP
+﻿using System.Text.Json;
+
+namespace OOP
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Opdracht96_C();
+            Opdracht96_D();
             Console.ReadLine();
         }
 
@@ -126,6 +128,17 @@
             Console.Write("GeboorteDatum: ");
             Mens.GeboorteDatum = DateTime.Parse((Console.ReadLine()));
             Console.WriteLine($"{Mens.Voornaam + " " + Mens.Achternaam} is {DateTime.Now.Year - Mens.GeboorteDatum.Year}"); //DateTime.year geeft een int
+        }
+
+        public static void Opdracht96_D()
+        {
+            Console.WriteLine("when birthday day/month");
+            DateTime verjaardag = DateTime.Parse(Console.ReadLine());
+            TimeSpan result = verjaardag.AddYears(1) - DateTime.Today;
+            DateTime totVerjaardag = DateTime.Now;
+            Console.Write($"You're birthday is in {result.TotalDays} days on a ");
+            Console.WriteLine(System.Globalization.DateTimeFormatInfo.CurrentInfo.GetDayName(verjaardag.DayOfWeek));
+
         }
     }
 }
