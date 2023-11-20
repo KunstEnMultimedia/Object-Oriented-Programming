@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht96_B();
+            Opdracht96_C();
             Console.ReadLine();
         }
 
@@ -114,6 +114,18 @@
             Console.WriteLine($"Verschil = {paar1.Verschil()}");
             Console.WriteLine($"Product = {paar1.Product()}");
             Console.WriteLine($"Quotient = {paar1.Quotient()}");
+        }
+
+        public static void Opdracht96_C()
+        { 
+          Persoon Mens = new Persoon();
+            Console.Write("Voornaam: ");
+            Mens.Voornaam = Console.ReadLine();
+            Console.Write("Achternaam: ");
+            Mens.Achternaam = Console.ReadLine();
+            Console.Write("GeboorteDatum: ");
+            Mens.GeboorteDatum = DateTime.Parse((Console.ReadLine()));
+            Console.WriteLine($"{Mens.Voornaam + " " + Mens.Achternaam} is {DateTime.Now.Year - Mens.GeboorteDatum.Year}"); //DateTime.year geeft een int
         }
     }
 }

@@ -27,7 +27,7 @@
     {
         get
         {
-            return energie;  //geeft de ingevoerde waarde energie als Energie
+            return energie;  //geeft de waarde energie als Energie
         }
         private set
         {

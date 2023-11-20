@@ -9,43 +9,51 @@ namespace RPG_Marinus
 {
     internal class Room
     {
-           bool loot;
-           bool encounter;
-           bool shop;
+           string specialEvent;
            bool start;
            bool end;
            string description;
+           public List<Room> rooms = new List<Room>();
 
-        void GenerateRooms()
+        public void GenerateRooms()
         {
-          Random random = new Random();
-
-          List<Room> rooms = new List<Room>();
+            Random random = new Random();
           
-          List<bool> lootChance = new List<bool> {false,false,false,false,false,false,false,false,false,true};//10%
-          List<bool> encounterChance = new List<bool> { false, false, false, true, true, true, true, true, true, true };//70%
-          List<bool> shopChance = new List<bool> { false, false, false, false, false, false, false, false, true, true };//20%
-          List<string> descriptions = new List<string> {"You enter a dark room and can't see much. ", "You enter a sewer tunnel everything is wet and it smells like disease. ", "You enter a small room with some barrels and crates, looks like an old storage room. ", "You walk in a nicely lit room with some spoiled food on a small dinner table. ", "You enter a cold and almost instantly slip and fall, but you manage to catch yourself. ", "You find yourself on staircase with some terrible and crooked steps. " , "A big ornate bedroom with. Too bad the sheets are gone, a nap would be nice right now.", "You entered an old prison cell, no old skeletons though. ", "You enter a library, it looks like it's been raided. ", "This room has a low ceiling be carefull to not bump your head. ", "Just a hallway, nothing special. ", "You enter a big theatre with a podium. Maybe it was a comedy cub? ", "A kitchen. It smells like most of the food here spoilt. ", "You enter a room and there's..... nothing special. "};
-          List<string> shopKeeperHello = new List<string> {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
+            List<string> specialEvents = new List<string> {"Encounter","Encounter","Encounter","Encounter","Encounter","Encounter","Encounter","Shop","Shop","Loot"};
+            List<string> descriptions = new List<string> {"You enter a dark room and can't see much. ", "You enter a sewer, everything is wet and stinky. ", "You enter a small room with some barrels and crates, looks like a broken down storage room. ", "You walk in a nicely lit with some small tables and chairs. A dinner table for tiny people . ", "You enter a cold and almost instantly slip and fall, you manage to catch yourself right before you hit the floor. ", "You find yourself on staircase which has some terribly crooked steps. " , "A big ornate bedroom. Too bad the matress is gone, a nap would be nice.", "You've entered an old prison cell, no corpses. That's nice. ", "You enter a library, it looks like it's been raided a long time ago. ", "This room has a low ceiling be carefull not to bump your head. ", "Just a hallway, nothing special. ", "You enter a big theatre with a podium. Maybe it was a comedy cub? ", "A kitchen. It smells like most of the food here spoilt. ", "You enter a room and there's..... nothing special. "};
+            List<string> shopKeeperHello = new List<string> {"Hello ", "Welcome traveller ", "Come and take a look at my wares "};
 
-            for (int i = 0; i  < rooms.Count; i ++)
+            for (int i = 0; i  <= 15; i++)
             {
-               Room room = new Room(lootChance[random.Next(0,10)], encounterChance[random.Next(0, 10)], shopChance[random.Next(0, 10)],false,false,"PlaceHolder");
-               rooms.Add(room);
+                Room room = new Room(specialEvents[random.Next(0, 9)], false, false, descriptions[random.Next(0,13)]);
+                switch (room.specialEvent)
+                { 
+                    case "Encounter":
+
+                      break;
+
+                    case "Shop":
+                        room.description = shopKeeperHello[random.Next(0,2)];
+
+                        break;
+
+                    case "Loot":
+
+                        break;
+                }
+                  rooms.Add(room);
             }
-            // if de ding met laagste percentage is true dan is zijn de andere dingen false
 
         }
 
 
 
-           public Room(bool _loot, bool _encounter, bool _shop, bool _start, bool _end, string _description)
+           public Room(string _specialEvent, bool _start, bool _end, string _description)
            {
-            loot = _loot;
-            encounter = _encounter;
-            shop = _shop;
+            specialEvent = _specialEvent; 
             start = _start;
             end = _end;
+            description = _description;
            } 
     }
 }

@@ -31,9 +31,9 @@ public class Menu
     {
         Environment.Exit(0);
     }
-    public static void Samurai() { Class currentClass = new Class(120, 10, 20, 25, 3); }
-    public static void Gunslinger() { Class currentClass = new Class(100, 15, 15, 50, 2); }
-    public static void Wizard() { Class currentClass = new Class(80, 20, 10, 20, 4); }
+    public static void Samurai() { Class currentClass = new Class(120, 10, 20, 25, 3); menu = false; Console.Clear(); }
+    public static void Gunslinger() { Class currentClass = new Class(100, 15, 15, 50, 2); menu = false; Console.Clear(); }
+    public static void Wizard() { Class currentClass = new Class(80, 20, 10, 20, 4); menu = false; Console.Clear(); }
 
     public void Selector(string function1, string function2 ,string function3, int cursorStart)
     {
