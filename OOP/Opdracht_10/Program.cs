@@ -6,7 +6,7 @@ namespace Opdracht_10
     {
         static void Main(string[] args)
         {
-            Opdracht101();
+            Opdracht102();
             Console.ReadLine();
         }
         public static void Opdracht101()
@@ -29,6 +29,39 @@ namespace Opdracht_10
             Console.WriteLine($"stud1 {stud1.Naam}");
 
 
+        }
+
+        public static void Opdracht102()
+        {
+            Meting m1 = new Meting();
+            m1.Temperatuur = 26;
+            m1.OpgemetenDoor = "Lieven Scheire";
+            Meting m2 = new Meting();
+            m2.Temperatuur = 34;
+            m2.OpgemetenDoor = "Ann Dooms";
+
+            m1.ToonMetingInKleur(ConsoleColor.Red);
+            m2.ToonMetingInKleur(ConsoleColor.Cyan);
+
+
+            m1.Temperatuur = 26;
+            m1.OpgemetenDoor = "Lieven Scheire";
+            m2.Temperatuur = 5;
+            m2.OpgemetenDoor = "Lieven Scheire";
+            m1.VoegMetingToeEnVerwijder(ref m2);
+            Console.WriteLine($"Temperatuur m1: {m1.Temperatuur} en m2: {m2.Temperatuur}");
+
+
+            m1.Temperatuur = 26;
+            m1.OpgemetenDoor = "Lieven Scheire";
+            Meting m3 = m1.GenereerRandomMeting();
+            Console.WriteLine($"{m3.Temperatuur} gemeten door {m3.OpgemetenDoor}");
+
+            Mens oermoeder = new Mens();
+            Mens dochter;
+            Mens kleindochter;
+            dochter = oermoeder.PlantVoort();
+            kleindochter = dochter.PlantVoort();
         }
     }
 }

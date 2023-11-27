@@ -45,9 +45,6 @@ namespace RPG_Marinus
             }
 
         }
-
-
-
            public Room(string _specialEvent, bool _start, bool _end, string _description)
            {
             specialEvent = _specialEvent; 
