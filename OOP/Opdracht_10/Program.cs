@@ -1,4 +1,5 @@
 ﻿using System;
+using static Mens;
 
 namespace Opdracht_10
 {
@@ -9,7 +10,7 @@ namespace Opdracht_10
             Opdracht102();
             Console.ReadLine();
         }
-        public static void Opdracht101()
+        public static void Opdracht10()
         {
             int getal = 5;
             VerhoogParameter(getal);
@@ -31,7 +32,7 @@ namespace Opdracht_10
 
         }
 
-        public static void Opdracht102()
+        public static void Opdracht101()
         {
             Meting m1 = new Meting();
             m1.Temperatuur = 26;
@@ -60,8 +61,39 @@ namespace Opdracht_10
             Mens oermoeder = new Mens();
             Mens dochter;
             Mens kleindochter;
-            dochter = oermoeder.PlantVoort();
-            kleindochter = dochter.PlantVoort();
+         //   dochter = oermoeder.PlantVoort();// ik heb de class veranderd in een latere opdracht dus ik comment deze twee stukken code
+           // kleindochter = dochter.PlantVoort(); // 
+        }
+
+        public static void Opdracht102()
+        {
+
+         //   Student stud1 = null;
+            Student John = new Student("John");
+            Student Piet = new Student("Piet");
+            Student Mike = new Student("Mike");
+
+
+            Student[] Studenten = { Mike, Piet, John };
+
+           // Console.WriteLine(stud1?.Naam);
+            Console.WriteLine(Student.ZoekStudent(Studenten,"John").Naam);
+            Console.WriteLine(Student.ZoekStudent(Studenten,"Egbert John").Naam);
+            Console.WriteLine(Student.ZoekStudent(Studenten, "Joh").Naam);
+            Console.WriteLine(Student.ZoekStudent(Studenten, "Piet").Naam);
+
+            Mens mama = new Mens();
+            mama.Geslacht = Geslachten.Vrouw;
+            mama.MaxLengte = 180;
+            Mens papa = new Mens();
+            papa.Geslacht = Geslachten.Man;
+            papa.MaxLengte = 169;
+
+            Mens baby = mama.PlantVoort(papa);
+
+            Console.WriteLine($"Baby gemaakt met geslacht {baby.Geslacht} en MaxLengte {baby.MaxLengte}");
+
+
         }
     }
 }
