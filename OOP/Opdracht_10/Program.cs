@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NietOpdracht_10;
+using System;
 using static Mens;
 
 namespace Opdracht_10
@@ -7,18 +8,21 @@ namespace Opdracht_10
     {
         static void Main(string[] args)
         {
-            Opdracht102();
+            Opdracht103();
             Console.ReadLine();
         }
-        public static void Opdracht10()
+        public static void Opdracht101()
         {
             int getal = 5;
             VerhoogParameter(getal);
+
             void VerhoogParameter(int a)
-            {
+            {//ik laat de functie in de method staan hierbuiten verputst de organizatie van de opdrachten als methods
                 a++;
                 Console.WriteLine($"In methode {a}");
             }
+
+
             Console.WriteLine($"Na methode {getal}");
             Console.Write("Naam: ");
             Student stud = new Student(Console.ReadLine()); // readline defineerd de string name
@@ -32,7 +36,7 @@ namespace Opdracht_10
 
         }
 
-        public static void Opdracht101()
+        public static void Opdracht102()
         {
             Meting m1 = new Meting();
             m1.Temperatuur = 26;
@@ -65,7 +69,7 @@ namespace Opdracht_10
            // kleindochter = dochter.PlantVoort(); // 
         }
 
-        public static void Opdracht102()
+        public static void Opdracht103()
         {
 
          //   Student stud1 = null;
@@ -94,6 +98,11 @@ namespace Opdracht_10
             Console.WriteLine($"Baby gemaakt met geslacht {baby.Geslacht} en MaxLengte {baby.MaxLengte}");
 
 
+        }
+
+        public static void Opdracht104()
+        { 
+            
         }
     }
 }

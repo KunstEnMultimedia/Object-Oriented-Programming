@@ -1,5 +1,8 @@
 ﻿using System;
 
+namespace NietOpdracht_10
+{ 
+
 public class Student
 {
     public string Naam { get; set; }
@@ -28,4 +31,5 @@ public class Student
         }
         return gevonden;
     }
+}
 }

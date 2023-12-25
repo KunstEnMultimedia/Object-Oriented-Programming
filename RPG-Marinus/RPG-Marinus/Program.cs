@@ -1,13 +1,14 @@
-﻿using System.Numerics;
-
+﻿
 namespace RPG_Marinus
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static int currentCount;
+        public static Room currentRoom;
+        public static Room Kamer = new Room("Loot", true, false, "You are lost, Good luck.", "You have a potion now");
+        public static void Main(string[] args)
         {
             Menu Menu = new Menu();
-            Room Kamer = new Room("Loot", true,false, "You are lost, Good luck.");
             Kamer.rooms.Add(Kamer);
             Kamer.GenerateRooms();
 
@@ -15,19 +16,31 @@ namespace RPG_Marinus
             Menu.Selector("Start", "Options", "Quit", 0);
             Menu.Selector("Samurai", "Gunslinger", "Wizard", 2);
 
-            foreach (Room room in Kamer.rooms)//voor elke kamer in kamer
-            { 
+            for (currentCount = 0; currentCount <= Kamer.rooms.Count; currentCount++)
+            {
+                Console.WriteLine();
+                Console.WriteLine();
+                currentRoom = Kamer.rooms.ElementAt(currentCount);
 
-               if (currentRoom == Kamer.rooms.ElementAt(0))
-               {
-                   Menu.Selector("verder", "rondkijken", "inventaris", 0);
-               }
+                if (currentRoom == Kamer.rooms.ElementAt(currentCount))
+                {
+                     Menu.Selector("Travel", "CheckRoom", "Inventory", 2);
+                }
 
             }
-
-
-            Console.ReadLine(); 
         }
-            
+
+        public static void NextRoom()
+        {
+            currentRoom = Kamer.rooms[currentCount++];
+            Console.SetCursorPosition(0,0);
+            Console.Clear();
+            Console.WriteLine(Kamer.rooms[currentCount].description);
+            Console.WriteLine(currentCount);
+            Console.WriteLine("Travel");
+            Console.WriteLine("CheckRoom");
+            Console.WriteLine("Inventory");
+        }
+
     }
 }

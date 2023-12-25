@@ -1,10 +1,12 @@
-﻿using System;
+﻿using RPG_Marinus;
+using System;
 using System.Reflection; // nodig om een string te gebruiken om vervolgen een functie mee aan te roepen
-
 
 public class Menu
 {
-    public static bool menu = true;
+    public static Room currentRoom = new Room();
+
+    public static bool menu = true;//de volgende dingen zijn static voor gebruik in de selecter functie
     public static void Start()
     {
         menu = false;
@@ -15,18 +17,13 @@ public class Menu
         Console.WriteLine(name + " is een...");
         Console.WriteLine();
 
-        //Menu.Selector("Samurai", "Gunslinger", "Wizard");
         Console.SetCursorPosition(0, 2);
-
-        // hier komt nu een selectie scherm
     }
-
 
     public static void Options()
     {
-        Console.WriteLine("Sorry nog geen options");
+        Console.WriteLine("Sorry no options");
     }
-
     public static void Quit()
     {
         Environment.Exit(0);
@@ -35,6 +32,35 @@ public class Menu
     public static void Gunslinger() { Class currentClass = new Class(100, 15, 15, 50, 2); menu = false; Console.Clear(); }
     public static void Wizard() { Class currentClass = new Class(80, 20, 10, 20, 4); menu = false; Console.Clear(); }
 
+    public static void Travel()
+    {
+        Program.NextRoom();
+    }
+    
+    public static void CheckRoom()
+    {
+        currentRoom = Program.currentRoom;
+        switch (currentRoom.specialEvent)
+        {
+            case "Encounter":
+                Console.WriteLine("!");
+                //Program.currentCount--;
+                // als verderkijken trigger
+                break;
+
+            case "Shop":
+                Console.WriteLine(currentRoom.description);
+                //Program.currentCount--;
+                // als verderkijken trigger
+                break;
+
+            case "Loot":
+                Console.WriteLine(currentRoom.lootItem);
+                //Program.currentCount--;
+                // geef item op basis van de lootItems List
+                break;
+        }
+    }
     public void Selector(string function1, string function2 ,string function3, int cursorStart)
     {
         Console.WriteLine(function1);
@@ -87,7 +113,7 @@ public class Menu
 
             if (read == ConsoleKey.Enter && menu == true)
             // roept de functie die als paramaters die zijn ingevoerd
-            // en met Y van de cursor positie kiest hij welke van de drie gekozen wordt
+            // en met Y van de cursor positie kiest hij welke van de drie geselecteerd is
             {
               switch (trueSelected)
               {
