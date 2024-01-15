@@ -5,7 +5,9 @@ namespace RPG_Marinus
     {
         public static int currentCount;
         public static Room currentRoom;
-        public static Room Kamer = new Room("Loot", true, false, "You are lost, Good luck.", "You have a potion now");
+        public static Room Kamer = new Room("Loot", true, false, "You are lost, Good luck.", "You look around the room but find nothing new but you do have a potion on you");
+        // kamer is eerste kamer
+
         public static void Main(string[] args)
         {
             Menu Menu = new Menu();
@@ -26,20 +28,41 @@ namespace RPG_Marinus
                 {
                      Menu.Selector("Travel", "CheckRoom", "Inventory", 2);
                 }
-
             }
         }
 
+        public static void check()
+        {
+                switch (currentRoom.specialEvent)
+                {
+                    case "Encounter":
+                        Console.WriteLine("!");
+                        //Program.currentCount--;
+                        break;
+
+                    case "Shop":
+                    Console.WriteLine(Kamer.rooms[currentCount]);
+                        //Program.currentCount--;
+                        break;
+
+                    case "Loot":
+                    Console.WriteLine(Kamer.rooms[currentCount].lootItem);
+                        //Program.currentCount--;
+                        // geef item op basis van de lootItems List
+                        break;
+                }
+            }
+
         public static void NextRoom()
         {
-            currentRoom = Kamer.rooms[currentCount++];
-            Console.SetCursorPosition(0,0);
-            Console.Clear();
-            Console.WriteLine(Kamer.rooms[currentCount].description);
-            Console.WriteLine(currentCount);
-            Console.WriteLine("Travel");
-            Console.WriteLine("CheckRoom");
-            Console.WriteLine("Inventory");
+           currentRoom = Kamer.rooms[currentCount++];
+           Console.SetCursorPosition(0,0);
+           Console.Clear();
+           Console.WriteLine(Kamer.rooms[currentCount].description);
+           Console.WriteLine(currentCount);
+           Console.WriteLine("Travel");
+           Console.WriteLine("CheckRoom");
+           Console.WriteLine("Inventory");
         }
 
     }

@@ -1,5 +1,4 @@
-﻿using NietOpdracht_10;
-using System;
+﻿using System;
 using static Mens;
 
 namespace Opdracht_10
@@ -8,7 +7,7 @@ namespace Opdracht_10
     {
         static void Main(string[] args)
         {
-            Opdracht103();
+            Opdracht104();
             Console.ReadLine();
         }
         public static void Opdracht101()
@@ -101,8 +100,43 @@ namespace Opdracht_10
         }
 
         public static void Opdracht104()
-        { 
-            
+        {
+            //try
+            //{
+            //    Console.WriteLine("Geef mij een nummer en ik weet 100% zeker dat ik een hoger nummer heb gekozen");
+            //    int input = Int32.Parse(Console.ReadLine());
+            //    Console.WriteLine(input + 1);
+            //}
+            //catch (FormatException ex)
+            //{
+            //    Console.WriteLine("Dan moet ik wel een nummer hebben");
+            //}
+
+            try
+            {
+                Console.WriteLine("Geef mij een nummer en ik weet 100% zeker dat ik een hoger nummer heb gekozen");
+                bool input = Int32.TryParse(Console.ReadLine(), out int result);
+
+                if (input)
+                {
+                    Console.WriteLine(result + 1);
+                }
+                else
+                {
+                    throw new FormatException("Wow, dit loopt fout");
+                }
+            }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Verkeerde Invoer! " + ex.Message);
+                }
+                finally 
+                {
+                   Console.WriteLine("Finally blok wordt uitgevoerd");
+                }
+
+        }    
+
+
         }
     }
-}

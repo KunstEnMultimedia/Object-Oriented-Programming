@@ -36,30 +36,10 @@ public class Menu
     {
         Program.NextRoom();
     }
-    
+
     public static void CheckRoom()
     {
-        currentRoom = Program.currentRoom;
-        switch (currentRoom.specialEvent)
-        {
-            case "Encounter":
-                Console.WriteLine("!");
-                //Program.currentCount--;
-                // als verderkijken trigger
-                break;
-
-            case "Shop":
-                Console.WriteLine(currentRoom.description);
-                //Program.currentCount--;
-                // als verderkijken trigger
-                break;
-
-            case "Loot":
-                Console.WriteLine(currentRoom.lootItem);
-                //Program.currentCount--;
-                // geef item op basis van de lootItems List
-                break;
-        }
+        Program.check();
     }
     public void Selector(string function1, string function2 ,string function3, int cursorStart)
     {
