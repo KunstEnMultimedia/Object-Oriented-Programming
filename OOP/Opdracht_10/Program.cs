@@ -10,16 +10,19 @@ namespace Opdracht_10
             Opdracht105();
             Console.ReadLine();
         }
+
+        public static void VerhoogParameter(int a)
+        {
+            a++;
+            Console.WriteLine($"In methode {a}");
+        }
+
+
         public static void Opdracht101()
         {
             int getal = 5;
             VerhoogParameter(getal);
 
-            void VerhoogParameter(int a)
-            {//ik laat de functie in de method staan hierbuiten verputst de organizatie van de opdrachten als methods
-                a++;
-                Console.WriteLine($"In methode {a}");
-            }
 
 
             Console.WriteLine($"Na methode {getal}");
