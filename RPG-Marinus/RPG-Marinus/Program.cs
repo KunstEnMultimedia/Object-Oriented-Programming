@@ -7,6 +7,7 @@ namespace RPG_Marinus
         public static Room currentRoom;
         public static Room Kamer = new Room("Loot", true, false, "You are lost, Good luck.", "You look around the room but find nothing new but you do have a potion on you");
         // kamer is eerste kamer
+        public static Inventory TakeInventory = new Inventory();
 
         public static void Main(string[] args)
         {
@@ -17,6 +18,7 @@ namespace RPG_Marinus
             //de Selector functie maakt een menu die je kan navigeren met de arrow keys en enter
             Menu.Selector("Start", "Options", "Quit", 0);
             Menu.Selector("Samurai", "Gunslinger", "Wizard", 2);
+            Console.Write(Kamer.description);
 
             for (currentCount = 0; currentCount <= Kamer.rooms.Count; currentCount++)
             {
@@ -37,17 +39,14 @@ namespace RPG_Marinus
                 {
                     case "Encounter":
                         Console.WriteLine("!");
-                        //Program.currentCount--;
                         break;
 
                     case "Shop":
                     Console.WriteLine(Kamer.rooms[currentCount]);
-                        //Program.currentCount--;
                         break;
 
                     case "Loot":
                     Console.WriteLine(Kamer.rooms[currentCount].lootItem);
-                        //Program.currentCount--;
                         // geef item op basis van de lootItems List
                         break;
                 }
@@ -63,6 +62,11 @@ namespace RPG_Marinus
            Console.WriteLine("Travel");
            Console.WriteLine("CheckRoom");
            Console.WriteLine("Inventory");
+        }
+
+        public static void Inventory()
+        {
+            TakeInventory.ShowInventory();
         }
 
     }

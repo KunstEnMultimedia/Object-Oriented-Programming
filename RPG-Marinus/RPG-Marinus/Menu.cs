@@ -28,9 +28,9 @@ public class Menu
     {
         Environment.Exit(0);
     }
-    public static void Samurai() { Class currentClass = new Class(120, 10, 20, 25, 3); menu = false; Console.Clear(); }
-    public static void Gunslinger() { Class currentClass = new Class(100, 15, 15, 50, 2); menu = false; Console.Clear(); }
-    public static void Wizard() { Class currentClass = new Class(80, 20, 10, 20, 4); menu = false; Console.Clear(); }
+    public static void Samurai() { Class currentClass = new Class(120, 10, 25, 3); menu = false; Console.Clear(); }
+    public static void Gunslinger() { Class currentClass = new Class(100, 15,  50, 2); menu = false; Console.Clear(); }
+    public static void Wizard() { Class currentClass = new Class(80, 20, 20, 4); menu = false; Console.Clear(); }
 
     public static void Travel()
     {

@@ -7,7 +7,7 @@ namespace Opdracht_10
     {
         static void Main(string[] args)
         {
-            Opdracht104();
+            Opdracht105();
             Console.ReadLine();
         }
         public static void Opdracht101()
@@ -64,14 +64,14 @@ namespace Opdracht_10
             Mens oermoeder = new Mens();
             Mens dochter;
             Mens kleindochter;
-         //   dochter = oermoeder.PlantVoort();// ik heb de class veranderd in een latere opdracht dus ik comment deze twee stukken code
-           // kleindochter = dochter.PlantVoort(); // 
+            //   dochter = oermoeder.PlantVoort();// ik heb de class veranderd in een latere opdracht dus ik comment deze twee stukken code
+            // kleindochter = dochter.PlantVoort(); // 
         }
 
         public static void Opdracht103()
         {
 
-         //   Student stud1 = null;
+            //   Student stud1 = null;
             Student John = new Student("John");
             Student Piet = new Student("Piet");
             Student Mike = new Student("Mike");
@@ -79,9 +79,9 @@ namespace Opdracht_10
 
             Student[] Studenten = { Mike, Piet, John };
 
-           // Console.WriteLine(stud1?.Naam);
-            Console.WriteLine(Student.ZoekStudent(Studenten,"John").Naam);
-            Console.WriteLine(Student.ZoekStudent(Studenten,"Egbert John").Naam);
+            // Console.WriteLine(stud1?.Naam);
+            Console.WriteLine(Student.ZoekStudent(Studenten, "John").Naam);
+            Console.WriteLine(Student.ZoekStudent(Studenten, "Egbert John").Naam);
             Console.WriteLine(Student.ZoekStudent(Studenten, "Joh").Naam);
             Console.WriteLine(Student.ZoekStudent(Studenten, "Piet").Naam);
 
@@ -100,6 +100,8 @@ namespace Opdracht_10
         }
 
         public static void Opdracht104()
+
+
         {
             //try
             //{
@@ -126,17 +128,22 @@ namespace Opdracht_10
                     throw new FormatException("Wow, dit loopt fout");
                 }
             }
-                catch (FormatException ex)
-                {
-                    Console.WriteLine("Verkeerde Invoer! " + ex.Message);
-                }
-                finally 
-                {
-                   Console.WriteLine("Finally blok wordt uitgevoerd");
-                }
-
-        }    
-
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Verkeerde Invoer! " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Finally blok wordt uitgevoerd");
+            }
 
         }
+
+        public static void Opdracht105()
+        {
+            // geen rekening class van het vorige hoofdstuk
+        }
+
+
     }
+}

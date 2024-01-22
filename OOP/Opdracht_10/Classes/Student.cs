@@ -3,6 +3,16 @@
 public class Student
 {
     public string Naam { get; set; }
+        
+    public Student() 
+    {
+        Random ran = new Random();
+        List<string> names =new List<string>() {"Bob", "Piet", "Arjen"}; 
+        string name = names.ElementAt(ran.Next(0,names.Count+1));
+        Naam = name;
+    }
+
+
 
     public Student(string name) 
     //name is de input property voor de constructor
@@ -24,7 +34,7 @@ public class Student
             if (array[i].Naam != naam)
             { 
                gevonden = new Student("Niet gevonden");
-            }//aangezien de de functie altijd type student returned verander ik de naam naar niet gevonden
+            }  //aangezien de de functie altijd type student returned verander ik de naam naar niet gevonden
         }
         return gevonden;
     }
