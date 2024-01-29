@@ -3,21 +3,36 @@
 public class Student
 {
     public string Naam { get; set; }
+    public bool IsWerkStudent { get; set; }
         
     public Student() 
     {
         Random ran = new Random();
-        List<string> names =new List<string>() {"Bob", "Piet", "Arjen"}; 
+        List<string> names = new List<string>() {"Bob", "Piet", "Arjen"}; 
         string name = names.ElementAt(ran.Next(0,names.Count+1));
         Naam = name;
     }
 
 
-
+    //overloaded 1
     public Student(string name) 
     //name is de input property voor de constructor
     { 
       Naam = name; // autoproperty wordt name
+    }
+
+    public Student(string name, bool iswerkstudent)
+    { 
+      Naam = name;
+      IsWerkStudent = iswerkstudent;
+        if (iswerkstudent)
+        {
+            Console.WriteLine($"{Naam} is wel een werkstudent");
+        }
+        else
+        {
+            Console.WriteLine($"{Naam} is geen werkstudent");
+        }
     }
     public static Student ZoekStudent(Student[] array, string naam)
     {

@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht111();
+            Opdracht112();
             Console.ReadLine();
         }
 
@@ -14,6 +14,17 @@
             Student Harry = new Student("Harry");
             Console.WriteLine(Willekeur.Naam);
             Console.WriteLine(Harry.Naam);
+        }
+
+        public static void Opdracht112()
+        {
+            Student Piet = new Student("Piet", true);
+            Student Jan = new Student("Jan", false);
+
+            Microfoon Mic1 = new Microfoon(false);
+            Microfoon Mic2 = new Microfoon(true);
+
+
         }
     }
 }
