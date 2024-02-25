@@ -1,5 +1,9 @@
 ﻿class Microfoon
 {
+    public string Merk { get; set; }
+    public bool IsUitverkocht { get; set; }
+
+
     public Microfoon(string merkIn, bool isUitverkochtIn)
     {
         IsUitverkocht = isUitverkochtIn;
@@ -26,6 +30,4 @@
         }
     }
 
-    public string Merk { get; set; }
-    public bool IsUitverkocht { get; set; }
 }

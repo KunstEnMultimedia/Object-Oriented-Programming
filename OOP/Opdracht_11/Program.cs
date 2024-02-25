@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht112();
+            Opdracht113();
             Console.ReadLine();
         }
 
@@ -23,6 +23,18 @@
 
             Microfoon Mic1 = new Microfoon(false);
             Microfoon Mic2 = new Microfoon(true);
+        }
+
+        public static void Opdracht113()
+        {
+            Microfoon NietUitverkocht = new Microfoon { IsUitverkocht = false, Merk = "Mijn Merk" };
+            Microfoon Uitverkocht = new Microfoon { IsUitverkocht = true, Merk = "Mijn Merk" };
+
+            if (!NietUitverkocht.IsUitverkocht && Uitverkocht.IsUitverkocht)
+            {
+                Console.WriteLine($"Microfoon {NietUitverkocht.Merk} is niet uitverkocht");
+                Console.WriteLine($"Microfoon {Uitverkocht.Merk} is wel uitverkocht");
+            }
 
 
         }
