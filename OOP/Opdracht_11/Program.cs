@@ -1,10 +1,15 @@
-﻿namespace Opdracht_11
+﻿using System.Diagnostics;
+
+namespace Opdracht_11
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Opdracht113();
+            Opdracht114();
+
+
+
             Console.ReadLine();
         }
 
@@ -35,8 +40,31 @@
                 Console.WriteLine($"Microfoon {NietUitverkocht.Merk} is niet uitverkocht");
                 Console.WriteLine($"Microfoon {Uitverkocht.Merk} is wel uitverkocht");
             }
+        }
+
+        public static void Opdracht114()
+        {
+            Mens m1 = new Mens();
+            Mens m2 = new Mens();
+            m1.Jarig();
+            m1.Jarig();
+            m2.Jarig();
+            Console.WriteLine($"{m1.Geboortejaar}");
+            Console.WriteLine($"{m2.Geboortejaar}");
+
+            EpicLibrary.ToonInfo();
+            int opgeteld = EpicLibrary.TelOp(3, 5);
+
+            Console.WriteLine("EpicConsole tekst");
+            Debug.WriteLine("EpicDebug tekst");
 
 
+            Fiets merckx = new Fiets();
+            Fiets steels = new Fiets();
+            Fiets evenepoel = new Fiets();
+            Fiets.VerminderFiets();
+            Fiets aerts = new Fiets();
+            Fiets.VerminderFiets();
         }
     }
 }
