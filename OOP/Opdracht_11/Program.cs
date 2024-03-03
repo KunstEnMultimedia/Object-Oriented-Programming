@@ -6,7 +6,7 @@ namespace Opdracht_11
     {
         static void Main(string[] args)
         {
-            Opdracht114();
+            Opdracht115a();
 
 
 
@@ -65,6 +65,27 @@ namespace Opdracht_11
             Fiets.VerminderFiets();
             Fiets aerts = new Fiets();
             Fiets.VerminderFiets();
+        }
+
+        public static void Opdracht115a()
+        {
+            DigitaleKluis kluis = new DigitaleKluis(33);
+            DigitaleKluis.BruteForce(kluis);
+
+
+            // dit is voor het handmatig raden van de codes uncomment dit als je -666/cheater detectie wilt testen
+
+            //for (int i = 0; i <= 10; i++)
+            //{
+            //    try
+            //    { 
+            //        kluis.TryCode(Int32.Parse(Console.ReadLine()));
+            //    }
+            //    catch
+            //    {
+            //        Console.WriteLine("De code is een nummer code. Niet dit.");
+            //    }
+            //}
         }
     }
 }
