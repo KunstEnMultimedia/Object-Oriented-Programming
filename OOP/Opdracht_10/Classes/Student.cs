@@ -4,12 +4,14 @@ public class Student
 {
     public string Naam { get; set; }
     public bool IsWerkStudent { get; set; }
+
+    public int GeboorteJaar { get; set; } = 2000;
         
     public Student() 
     {
         Random ran = new Random();
         List<string> names = new List<string>() {"Bob", "Piet", "Arjen"}; 
-        string name = names.ElementAt(ran.Next(0,names.Count+1));
+        string name = names.ElementAt(ran.Next(0,names.Count));
         Naam = name;
     }
 

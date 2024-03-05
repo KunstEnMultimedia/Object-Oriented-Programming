@@ -4,7 +4,7 @@
 
     int aantalPogingen = 0;
 
-	static int maxPogingen = 10;
+	static int maxPogingen = 100000;
 
 	public bool CanShowCode { get; set; }
 
@@ -48,7 +48,7 @@
 			}
 			if (codeIn != code && codeIn != -666)
 			{
-			  Console.WriteLine("Ongelide code");
+			  Console.WriteLine($"Ongelide code. Je hebt {aantalPogingen} geprobeerd");
 			  return false;
 			}
 			else
@@ -69,12 +69,12 @@
        
 		for (int i = 0;  i <= maxPogingen; i++)// deze doet 11 in plaats van 10 om te laten zien dat je geen pogingen meer hebt
 		{
-            int geprobeerdecode = random.Next(1,50);
+            int geprobeerdecode = random.Next(1,10001);
             bool result = kluisIn.TryCode(geprobeerdecode);
 
 			if (result)
 			{
-				Console.Clear();
+			//	Console.Clear();
 				Console.WriteLine($"{geprobeerdecode} Is de goede code, geraden in {kluisIn.aantalPogingen} pogingen." );
 				break;
             }
@@ -128,7 +128,93 @@
 	[Done]
 	7 Bruteforce functie
 	 */ 
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
