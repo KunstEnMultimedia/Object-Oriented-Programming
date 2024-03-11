@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht121();
+            Opdracht122();
             Console.ReadLine();
         }
 
@@ -29,7 +29,7 @@
 
             Student[] moreStudents = new Student[]
             {
-               new Student(), 
+               new Student(),
                new Student(),
                new Student(),
                new Student()
@@ -38,6 +38,55 @@
             moreStudents[0].Naam = "Frank";
 
             Console.WriteLine(moreStudents[0].Naam);
+        }
+
+        public static void Opdracht122()
+        {
+            List<int> alleGetallen = new List<int>();
+            alleGetallen.Add(1);
+            alleGetallen.Add(2);
+            alleGetallen.Add(3);
+
+
+            List<bool> binaryList = new List<bool>();
+            binaryList.Add(true);
+            binaryList.Add(true);
+            binaryList.Add(false);
+
+            List<Student> presentieLijst = new List<Student>()
+            {
+               new Student() { Naam = "Brent", GeboorteJaar = 1991, IsWerkStudent = false },
+               new Student() { Naam = "Albert", GeboorteJaar = 1989, IsWerkStudent = false }
+            };
+
+            List<string[]> listOfStringarrays = new List<string[]>();
+            listOfStringarrays.Add(["Yo"]);
+            listOfStringarrays.Add(["Waddup"]);
+            listOfStringarrays.Add(["Hallo"]);
+            listOfStringarrays.Add(["Yo"]);
+
+
+            for (int i = 0; i <= listOfStringarrays.Count-1; i++)
+            {
+                Console.WriteLine(listOfStringarrays[i].ElementAt(0));
+            }
+
+            for (int i = 0; i <= alleGetallen.Count-1; i++)
+            {
+                Console.WriteLine(alleGetallen[i]);
+            }
+
+            for (int i = 0; i <= presentieLijst.Count-1; i++)
+            {
+                Console.WriteLine($"{presentieLijst[i].Naam} is geboren in {presentieLijst[i].GeboorteJaar}");
+            }
+
+            for (int i = 0; i <= binaryList.Count-1; i++)
+            {
+                Console.WriteLine(binaryList[i]);
+            }
+
+            // ik hed de List.clear methode getest het verwijderd alles in een list
         }
     }
 }
