@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht123();
+            Opdracht124();
             Console.ReadLine();
         }
 
@@ -110,6 +110,48 @@
                 Console.Write($"{student.Naam} is geboren in {student.GeboorteJaar} en is ");
                 Console.WriteLine(student.IsWerkStudent ? "geen werk student" : "wel een werk student");
             }
+        }
+
+        public static void Opdracht124()
+        {
+            Queue<string> wachtrij = new Queue<string>();
+
+            wachtrij.Enqueue("Nummer 1");
+            wachtrij.Enqueue("Nummer 2");
+            wachtrij.Enqueue("Nummer 3");
+
+            Console.WriteLine("ik verwijder " + wachtrij.Dequeue());
+            Console.WriteLine(wachtrij.Peek());
+            Console.WriteLine(wachtrij.Peek());
+            Console.WriteLine("Nu zin er " + wachtrij.Count() + " Elementen in de wachtrij");
+
+
+            Stack<string> stapel = new Stack<string>();
+
+            stapel.Push("Eerste papier");
+            stapel.Push("Tweede papier");
+            stapel.Push("Laatste papier");
+            Console.WriteLine();
+
+            stapel.Pop();
+            stapel.Pop();
+            Console.WriteLine("Hoogte van de stapel is " + stapel.Count());
+            Console.WriteLine();
+
+
+            Dictionary<int, string> PairsDict = new Dictionary<int, string>();
+            PairsDict.Add(6363 ,"James Bond");
+            PairsDict.Add(123, "Tim Dams");
+            PairsDict.Add(666, "The Beast");
+            PairsDict.Add(700, "James Bond");
+
+            foreach (var Pair in PairsDict)
+            {
+                Console.WriteLine($"{Pair.Key} : {Pair.Key}");
+            }
+
+
+
         }
     }
 }
