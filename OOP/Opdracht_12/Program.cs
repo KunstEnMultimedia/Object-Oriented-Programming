@@ -1,10 +1,12 @@
-﻿namespace Opdracht_12
+﻿using System.ComponentModel.Design;
+
+namespace Opdracht_12
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Opdracht124();
+            Opdracht125a();
             Console.ReadLine();
         }
 
@@ -149,8 +151,40 @@
             {
                 Console.WriteLine($"{Pair.Key} : {Pair.Key}");
             }
+        }
 
+        public static void Opdracht125a()
+        {
+            double[] prijzen = new double[5];
+            double nummer;
+            double som = 0;
 
+            foreach (var prijs in prijzen)
+            {
+              Opnieuw:
+                 Console.Write($"Prijs {Array.IndexOf(prijzen, prijs) + 1}  : ");
+                 bool v = Double.TryParse(Console.ReadLine(), out nummer);
+             
+                 if (!v) // error handling
+                 {
+                     Console.WriteLine("Foute invoer");
+                     goto Opnieuw;
+                 }
+             
+                 prijzen[Array.IndexOf(prijzen, prijs)] = nummer; // Zet de index van prijs naar nummer
+            }
+            Console.WriteLine("De prijzen hoger of gelijk aan vijf 5 zijn/is: ");
+
+            foreach (var numbers in prijzen)
+            {
+                som += numbers;
+
+                if (numbers >= 5)
+                { 
+                 Console.WriteLine($"{numbers}");
+                }
+            }
+            Console.WriteLine("Het gemiddelde van alle getallen is: " + som / prijzen.Length);
 
         }
     }
