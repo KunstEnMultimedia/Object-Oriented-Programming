@@ -6,7 +6,7 @@ namespace Opdracht_12
     {
         static void Main(string[] args)
         {
-            Opdracht125a();
+            Opdracht125b();
             Console.ReadLine();
         }
 
@@ -186,6 +186,13 @@ namespace Opdracht_12
             }
             Console.WriteLine("Het gemiddelde van alle getallen is: " + som / prijzen.Length);
 
+        }
+
+        public static void Opdracht125b()
+        {
+            List<Speelkaart> Deck = Speelkaart.MaakSpel();
+
+            Speelkaart.checkDeck(Deck);
         }
     }
 }
