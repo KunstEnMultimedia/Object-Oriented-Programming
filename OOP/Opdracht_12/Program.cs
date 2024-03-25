@@ -6,7 +6,7 @@ namespace Opdracht_12
     {
         static void Main(string[] args)
         {
-            Opdracht123();
+            Opdracht125b();
             Console.ReadLine();
         }
 
