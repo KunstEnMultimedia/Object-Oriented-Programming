@@ -6,7 +6,7 @@ namespace Opdracht_12
     {
         static void Main(string[] args)
         {
-            Opdracht125b();
+            Opdracht123();
             Console.ReadLine();
         }
 
@@ -103,14 +103,14 @@ namespace Opdracht_12
             foreach (Student student in presentieLijst)
             {
                 Console.Write($"{student.Naam} is geboren in {student.GeboorteJaar} en is ");
-                Console.WriteLine(student.IsWerkStudent ? "geen werk student" : "wel een werk student");
+                Console.WriteLine(student.IsWerkStudent ? "wel een werk student" : "geen werk student");
             }
 
             foreach (var student in presentieLijst)
             {
                 student.GeboorteJaar++;
                 Console.Write($"{student.Naam} is geboren in {student.GeboorteJaar} en is ");
-                Console.WriteLine(student.IsWerkStudent ? "geen werk student" : "wel een werk student");
+                Console.WriteLine(student.IsWerkStudent ? "wel een werk student" : "geen werk student");
             }
         }
 
