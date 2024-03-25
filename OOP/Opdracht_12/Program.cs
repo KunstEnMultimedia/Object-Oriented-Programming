@@ -6,7 +6,7 @@ namespace Opdracht_12
     {
         static void Main(string[] args)
         {
-            Opdracht125b();
+            Opdracht125a();
             Console.ReadLine();
         }
 
@@ -159,20 +159,38 @@ namespace Opdracht_12
             double nummer;
             double som = 0;
 
-            foreach (var prijs in prijzen)
-            {
-              Opnieuw:
-                 Console.Write($"Prijs {Array.IndexOf(prijzen, prijs) + 1}  : ");
-                 bool v = Double.TryParse(Console.ReadLine(), out nummer);
-             
-                 if (!v) // error handling
-                 {
-                     Console.WriteLine("Foute invoer");
-                     goto Opnieuw;
-                 }
-             
-                 prijzen[Array.IndexOf(prijzen, prijs)] = nummer; // Zet de index van prijs naar nummer
+            //--------------------------------------Oude code vvvv
+            //   foreach (var prijs in prijzen) 
+            //   {
+            //       Console.Write($"Prijs {Array.IndexOf(prijzen, prijs) + 1}  : ");
+            //       bool v = Double.TryParse(Console.ReadLine(), out nummer);
+            //
+            //       if (!v) // restart de functie bij foute input
+            //       {
+            //           Opdracht125a();
+            //       }
+            //       else 
+            //       { 
+            //           prijzen[Array.IndexOf(prijzen, prijs)] = nummer; // Zet de element op index van prijs naar nummer
+            //       }
+            //   }
+            //--------------------------------------Oude code ^^^^
+
+            for (int i = 0; i < prijzen.Length; i++)
+            { 
+                Console.Write($"Prijs {i + 1} : ");
+                bool v = Double.TryParse(Console.ReadLine(), out nummer);
+
+                if (!v) // restart de functie bij foute input
+                {
+                    i--;
+                }
+                else
+                {
+                  prijzen[i] = nummer; // Zet de element op index van de currentprijs naar nummer
+                }
             }
+
             Console.WriteLine("De prijzen hoger of gelijk aan vijf 5 zijn/is: ");
 
             foreach (var numbers in prijzen)
