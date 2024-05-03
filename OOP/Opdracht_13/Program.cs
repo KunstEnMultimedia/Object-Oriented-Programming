@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht131();
+            Opdracht132();
             Console.ReadLine();
         }
 
@@ -23,7 +23,15 @@
             Console.WriteLine($"Paard geboortejaar : {aPaard.geboorteJaar} Dier geboortje jaar : {aDier.geboorteJaar}");
             aPaard.MaakOuder();
             Console.WriteLine($"Paard geboortejaar : {aPaard.geboorteJaar} Dier geboortje jaar : {aDier.geboorteJaar}");
+        }
+        public static void Opdracht132()
+        {
+            Veldarts = new Veldarts();
+            Veldarts = new Veldarts(false);
 
+            Apartement fijftien_verdiepingen = new Apartement(15);
+            Huis mijn_huis = new Huis(true,true,3);
+            Villa villa = new Villa(true, true, 20);
         }
     }
 }
