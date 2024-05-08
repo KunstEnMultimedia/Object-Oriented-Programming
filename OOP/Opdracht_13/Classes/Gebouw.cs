@@ -2,7 +2,7 @@
 
 public class Gebouw
 {
-    int aantalVerdiepingen { get; private set; }
+    protected int aantalVerdiepingen { get; private set; }
 
     public Gebouw(int aantalVerdiepingenIn = 1)
     { 
@@ -16,12 +16,12 @@ public class Apartement : Gebouw
 {
     public Apartement():base(15)
     {
-        Console.WriteLine("aantal verdiepingen:" + aantalVerdiepingen);
+        Console.WriteLine("Apartement: Verdiepingen: " + aantalVerdiepingen);
     }
 
     public Apartement(int aantalVerdiepingenIn) : base(aantalVerdiepingenIn)
     {
-        Console.WriteLine("aantal verdiepingen:" + aantalVerdiepingen);
+        Console.WriteLine("Apartement: Verdiepingen: " + aantalVerdiepingen);
 
     }
 }
@@ -29,23 +29,23 @@ public class Apartement : Gebouw
 
 public class Huis : Gebouw
 {
-    bool heeftTuintje { get; private set; }
-    bool HeeftDeurbel { get; private set; }
+    protected bool HeeftTuintje { get; private set; }
+    protected bool HeeftDeurbel { get; private set; }
 
     public Huis():base(2)
     { 
-      heeftTuintje = false;
-      heeftDeurbel = false;
+      HeeftTuintje = false;
+      HeeftDeurbel = false;
 
-      Console.WriteLine($"Huis: Deurbel: {HeeftDeurbel}, Tuintje: {heeftTuintje}, Verdiepingen {aantalVerdiepingen}");
+      Console.WriteLine($"Huis: Deurbel: {HeeftDeurbel}, Tuintje: {HeeftTuintje}, Verdiepingen {aantalVerdiepingen}");
     }
 
     public Huis(bool tuintjeIn, bool deurbelIn, int aantalVerdiepingenIn):base(aantalVerdiepingenIn)
     {
-        heeftTuintje = tuintjeIn;
+        HeeftTuintje = tuintjeIn;
         HeeftDeurbel = deurbelIn;
 
-        Console.WriteLine($"Huis: Deurbel: {HeeftDeurbel }, Tuintje: {heeftTuintje}, Verdiepingen {aantalVerdiepingen}");
+        Console.WriteLine($"Huis: Deurbel: {HeeftDeurbel }, Tuintje: {HeeftTuintje}, Verdiepingen {aantalVerdiepingen}");
     }
 }
 
@@ -54,12 +54,12 @@ public class Villa : Huis
 {
     public Villa() : base(false, false, 2)
     { 
-        Console.WriteLine($"Villa: Deurbel: {HeeftDeurbel}, Tuintje: {heeftTuintje}, Verdiepingen {aantalVerdiepingen}");
+        Console.WriteLine($"Villa: Deurbel: {HeeftDeurbel}, Tuintje: {HeeftTuintje}, Verdiepingen {aantalVerdiepingen}");
     }
 
-    public Villa(bool tuintjeIn, bool deurbelIn, bool aantalVerdiepingenIn) : base(tuintjeIn, deurbelIn, aantalVerdiepingenIn)
+    public Villa(bool tuintjeIn, bool deurbelIn, int aantalVerdiepingenIn) : base(tuintjeIn, deurbelIn, aantalVerdiepingenIn)
     {
-        Console.WriteLine($"Villa: Deurbel: {HeeftDeurbel}, Tuintje: {heeftTuintje}, Verdiepingen {aantalVerdiepingen}");
+        Console.WriteLine($"Villa: Deurbel: {HeeftDeurbel}, Tuintje: {HeeftTuintje}, Verdiepingen {aantalVerdiepingen}");
 
     }
 }

@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht132();
+            Opdracht133();
             Console.ReadLine();
         }
 
@@ -26,12 +26,23 @@
         }
         public static void Opdracht132()
         {
-            Veldarts = new Veldarts();
-            Veldarts = new Veldarts(false);
+            Veldarts arts = new Veldarts();
+            Veldarts docterpersoon = new Veldarts(false);
+
+            Console.WriteLine();
 
             Apartement fijftien_verdiepingen = new Apartement(15);
             Huis mijn_huis = new Huis(true,true,3);
             Villa villa = new Villa(true, true, 20);
+        }
+
+        public static void Opdracht133()
+        { 
+          Vliegtuig vliegtuig = new();
+          Raket raket = new();
+          vliegtuig.Vlieg();
+          raket.Vlieg();
+
         }
     }
 }

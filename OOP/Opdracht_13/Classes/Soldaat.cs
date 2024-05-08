@@ -2,12 +2,12 @@
 
 public class Soldaat
 {
-	bool kanSchieten { get; private set; }
+	protected bool kanSchieten { get; private set; }
 	public Soldaat(bool kanschietenIn)
 	{
 		kanSchieten = kanschietenIn;
 
-		Console.WriteLine("Soldaat is gemaakt" + kanschieten);
+		Console.WriteLine("Soldaat is gemaakt. Kanschieten: " + kanSchieten);
 
 	}
 }
@@ -15,11 +15,11 @@ public class Veldarts : Soldaat
 {
 	public Veldarts() : base(true)
 	{ 
-		Console.WriteLine("Veldarts is gemaakt");
+		Console.WriteLine("Veldarts is gemaakt. Kanschieten: " + kanSchieten);
 	}
 
 	public Veldarts(bool kanschieten) : base(kanschieten)
 	{
-		Console.WriteLine("Veldarts is gemaakt" + kanschieten);
+		Console.WriteLine("Veldarts is gemaakt. Kanschieten: " + kanSchieten);
 	}
 }
