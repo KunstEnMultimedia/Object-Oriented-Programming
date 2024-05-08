@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht133();
+            Opdracht134();
             Console.ReadLine();
         }
 
@@ -42,7 +42,12 @@
           Raket raket = new();
           vliegtuig.Vlieg();
           raket.Vlieg();
+        }
 
+        public static void Opdracht134()
+        { 
+           Frituur friet = new();
+           Console.WriteLine("Alles poetsen kost: " + friet.PoetsAlles());
         }
     }
 }
