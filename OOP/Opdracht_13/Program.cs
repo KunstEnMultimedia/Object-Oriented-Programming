@@ -54,12 +54,20 @@
         {
             List<Patient> PatientList = [];
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
-                PatientList.Add( new() );
-                PatientList.ElementAt(i).InfoFiche();
+                if (i < 10)
+                {
+                    PatientList.Add(new());
+                    PatientList.ElementAt(i).InfoFiche();
+                }
+                else 
+                { 
+                    PatientList.Add(new VerzekerdePatient());
+                    PatientList.ElementAt(i).InfoFiche();
+                }
             }
-            
         }
+
     }
 }
