@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht134();
+            Opdracht135ab();
             Console.ReadLine();
         }
 
@@ -48,6 +48,18 @@
         { 
            Frituur friet = new();
            Console.WriteLine("Alles poetsen kost: " + friet.PoetsAlles());
+        }
+        
+        public static void Opdracht135ab()
+        {
+            List<Patient> PatientList = [];
+
+            for (int i = 0; i < 10; i++)
+            {
+                PatientList.Add( new() );
+                PatientList.ElementAt(i).InfoFiche();
+            }
+            
         }
     }
 }
