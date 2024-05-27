@@ -15,6 +15,17 @@ public class Student
         Naam = name;
     }
 
+    public override string ToString()
+    {
+        return $"{Naam} ({GeboorteJaar})";
+    }
+
+    public override bool Equals(object? obj)
+    {
+        Student temp = obj as Student;
+        return GeboorteJaar == temp.GeboorteJaar && Naam == temp.Naam;
+    }
+
 
     //overloaded 1
     public Student(string name) 
