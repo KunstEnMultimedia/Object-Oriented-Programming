@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht14_1();
+            Opdracht14_2();
             Console.ReadLine();
         }
         
@@ -15,8 +15,10 @@
             Console.WriteLine(stud.GetType().FullName); 
             Console.WriteLine(stud); // ToString wordt intern al gebruikt in Console.WriteLine();
             Console.WriteLine($"Student {stud} is {(stud.Equals(Pietje) ? "Wel" : "Niet")} Gelijk aan {Pietje}  ");
-
-
+        }
+        public static void Opdracht14_2()
+        { 
+            
         }
     }
 }
