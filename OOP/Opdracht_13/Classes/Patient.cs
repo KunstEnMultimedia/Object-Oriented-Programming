@@ -34,6 +34,7 @@ public class VerzekerdePatient : Patient
 {
     protected override int BerekenKost()
     {
+		// base pakt de functionaliteit
 		return Kosten = base.BerekenKost() * 90 / 100;
     }
     public override void InfoFiche()
