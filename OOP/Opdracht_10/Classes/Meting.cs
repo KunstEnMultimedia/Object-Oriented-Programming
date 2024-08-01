@@ -3,7 +3,7 @@
 class Meting
 {
     public int Temperatuur { get; set; }
-    public string OpgemetenDoor { get; set; }
+    public string OpgemetenDoor{ get; set; }
 
     public void ToonMetingInKleur(ConsoleColor kleur)
     {

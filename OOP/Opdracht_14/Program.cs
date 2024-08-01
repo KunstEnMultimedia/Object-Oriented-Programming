@@ -18,7 +18,11 @@
         }
         public static void Opdracht14_2()
         { 
-            
+            Wolf wolf = new Wolf();
+            Dier paard = new Paard();
+
+            Console.WriteLine(wolf.MaakGeluid());
+            Console.WriteLine(paard.MaakGeluid());
         }
     }
 }

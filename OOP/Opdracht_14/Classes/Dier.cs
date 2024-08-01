@@ -1,16 +1,37 @@
 ﻿using System;
 
-public abstract class Dier
+internal abstract class Dier
 {
-
+   internal abstract int MaxLeeftijd {get;}
+   internal abstract string MaakGeluid();
 }
 
-public class Wolf : Dier
-{ 
-
+internal class Wolf : Dier
+{
+    internal override int MaxLeeftijd 
+    {
+        get
+        {
+            return 20;
+        }
+    }
+    internal override string MaakGeluid()
+    {
+        return "Woef";
+    }
 }
 
-public class Paard : Dier
-{ 
-
+internal class Paard : Dier
+{
+    internal override int MaxLeeftijd 
+    { 
+        get
+        { 
+            return 25; 
+        } 
+    }
+    internal override string MaakGeluid()
+    {
+        return "Hinnik";
+    }
 }

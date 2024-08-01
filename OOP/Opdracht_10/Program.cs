@@ -7,8 +7,7 @@ namespace Opdracht_10
     {
         static void Main(string[] args)
         {
-            Opdracht105();
-            Console.ReadLine();
+            Opdracht102();
         }
 
         public static void VerhoogParameter(int a)
@@ -23,8 +22,6 @@ namespace Opdracht_10
             int getal = 5;
             VerhoogParameter(getal);
 
-
-
             Console.WriteLine($"Na methode {getal}");
             Console.Write("Naam: ");
             Student stud = new Student(Console.ReadLine()); // readline defineerd de string name
@@ -34,8 +31,6 @@ namespace Opdracht_10
             stud1 = stud;
             Console.WriteLine($"stud  {stud.Naam}");
             Console.WriteLine($"stud1 {stud1.Naam}");
-
-
         }
 
         public static void Opdracht102()
