@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht14_2();
+            Opdracht14_3();
             Console.ReadLine();
         }
         
@@ -23,6 +23,29 @@
 
             Console.WriteLine(wolf.MaakGeluid());
             Console.WriteLine(paard.MaakGeluid());
+        }
+
+            
+        public static void Opdracht14_3()
+        {
+            try
+            {
+                Timception.ResultaatBerekening(0);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            try
+            {
+                Timception.TimsMethode();
+            }
+            catch (Timception e)
+            {
+
+                Console.WriteLine(e.ToString());
+            }
         }
     }
 }
