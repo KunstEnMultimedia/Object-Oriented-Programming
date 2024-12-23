@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht14_3();
+            Opdracht14_4a();
             Console.ReadLine();
         }
         
@@ -46,6 +46,21 @@
 
                 Console.WriteLine(e.ToString());
             }
+        }
+
+        public static void Opdracht14_4a()
+        {
+            Boek Remarkable = new(978147322, "An Absolutely Remarkable Thing", "Hank Green", 17.99);
+            TextBoek ZieScherpScherper = new(9001,978946465,"ZieScherpScherper 2e","Tim Dams",25);
+            KoffietafelBoek NewYork = new(978383279, "New York", "Thomas Hoepker", 42.50);
+
+            Console.WriteLine(Remarkable);
+            Console.WriteLine(ZieScherpScherper);
+            Console.WriteLine(NewYork);
+
+            Console.WriteLine();
+
+            Console.WriteLine(Boek.TelOp(Remarkable, ZieScherpScherper));
         }
     }
 }
