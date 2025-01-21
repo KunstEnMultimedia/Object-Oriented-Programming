@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Opdracht14_4a();
+            Opdracht14_4b();
             Console.ReadLine();
         }
         
@@ -61,6 +61,22 @@
             Console.WriteLine();
 
             Console.WriteLine(Boek.TelOp(Remarkable, ZieScherpScherper));
+        }
+
+        public static void Opdracht14_4b()
+        {
+            var VierkantGelijk = new Vierkant(10, 10);
+            var VierkantOngelijk = new Vierkant(10, 11);
+            var RechtHoek = new RechtHoek(10, 20);
+            var RechtHoekGelijk = new RechtHoek(10, 10);
+            var Driehoek = new DrieHoek(3, 12);
+
+            Console.WriteLine($"Vierkant: Hoogte: {VierkantGelijk.Hoogte} Breedte: {VierkantGelijk.Breedte} Oppervlakte: {VierkantGelijk.Oppervlakte}");
+            Console.WriteLine($"VierkantOngelijk: Hoogte: {VierkantOngelijk.Hoogte} Breedte: {VierkantOngelijk.Breedte} Oppervlakte: {VierkantOngelijk.Oppervlakte}");
+            Console.WriteLine($"RechtHoek: Hoogte: {RechtHoek.Hoogte} Breedte: {RechtHoek.Breedte} Oppervlakte: {RechtHoek.Oppervlakte}");
+            Console.WriteLine($"RechthoekGelijk: Hoogte: {RechtHoekGelijk.Hoogte} Breedte: {RechtHoekGelijk.Breedte} Oppervlakte: {RechtHoekGelijk.Oppervlakte}");
+            Console.WriteLine($"Driehoek: Hoogte: {Driehoek.Hoogte} Breedte: {Driehoek.Breedte} Oppervlakte: {Driehoek.Oppervlakte}");
+
         }
     }
 }
